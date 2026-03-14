@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-midnight: #0a0f1e;
+  --color-deep: #111827;
+  --color-gold: #f5b942;
+  --color-amber: #e8813a;
+  --color-warm: #fdf3e3;
+  --color-light-text: #c4b8a0;
+  --color-card-bg: #141c2e;
+  --color-card-border: #1e2d4a;
+  --color-faith: #7ec8c8;
+}
+
+@layer base {
+  :root {
+    --background: #0a0f1e;
+    --foreground: #fdf3e3;
+  }
+}
+
+@layer base {
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    @apply antialiased overflow-x-hidden min-h-screen selection:bg-gold/20 selection:text-gold;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-card-bg/60 backdrop-blur-xl border border-card-border;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px rgba(245, 185, 66, 0.4);
+  }
+
+  .bg-aurora {
+    background: radial-gradient(circle at 50% 0%, rgba(245, 185, 66, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(232, 129, 58, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 20% 80%, rgba(126, 200, 200, 0.1) 0%, transparent 50%);
+  }
+}
